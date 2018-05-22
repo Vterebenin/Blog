@@ -1,0 +1,33 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+header
+	text-align: center
+.animation-h1
+	text-align: left
+	display: inline-block
+	width: 500px
+	&:hover
+		.background-size
+			background-color: red
+			animation: red-background 0.3s ease-out
+.ternow-h1
+	padding: 5px
+
+.background-size
+	width: 300px
+	height: 70px
+	position: relative
+	top: -66px
+	left: 0
+	z-index: -20
+	
+
+@keyframes red-background
+	0%
+		width: 0
+		background-color: transparent
+
+	100%
+		width: 300px
+		background-color: red
