@@ -41,7 +41,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 
 gem 'jquery-rails'
-
+gem 'carrierwave', '~> 1.0'
 gem 'devise'
 
 group :development, :test do
