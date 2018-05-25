@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>projects</h1>
+
+<p class="body"><%=  %></p>
+    
+  <div>
+    <% @projects.each do |project| %>
+      <ul>
+        <li><%= project.title %></li>
+        <li><%= project.description %></li>
+        <li><a href=<%= project.github %>>Github</a></li>
+        <li><a href=<%= project.demo %>>Demo</a></li>
+        <li class="project-picture"><%= image_tag(project.project_picture.url) if project.project_picture? %></li>
+        
+      </ul>
+    <% end %>
+  </div>
+</table>
+
+<br>
+
+<%= link_to 'New project', new_project_path %>

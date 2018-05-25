@@ -10,7 +10,14 @@
   </head>
 
   <body>
+
     <div class="container">
+      <% if user_signed_in? %>
+      <p>now online as: <%= current_user.email %></p>
+      <p><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></p>
+      <% else %>
+      <p><%= link_to "Sign in",  new_user_session_path %></p>
+      <% end %>
       <%= yield %>
     </div>
   </body>
