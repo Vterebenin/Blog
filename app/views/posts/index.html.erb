@@ -1,33 +1,45 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-<p class="body"><%=  %></p>
+
     
-  <div>
-    <% @posts.each do |post| %>
-      <ul>
-        <li><%= post.title %></li>
-        <li><%= truncate(post.body, length:30) %></li>
-        <li class="date"><%= time_ago_in_words(post.created_at) %></li>
-        <li><%= post.user.email %></li>
-        <li><%= image_tag(post.top_picture.url) if post.top_picture? %></li>
-        <li><%= link_to 'Show', post %></li>
-        <li><%= link_to 'Edit', edit_post_path(post) %></li>
-        <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      </ul>
+<div class="posts col-md-6">
+  <% @posts.each do |post| %>
+  <div class="post-wrapper">
+    <div class="animation-h1">
+      <h1 class="ternow-h1"><%= link_to post.title, post %></h1>
+      <div class="background-size">
+      </div>
+      <div class="background-size-2">
+      </div>
+      <div class="background-size-3">
+      </div>
+    </div>
+    <p><%= truncate(post.body, length:150) %></p>
+    <p>Posted <span class="date"><%= time_ago_in_words(post.created_at) %></span> ago</p>
+    <p><%= post.updated_at if post.updated_at? %></p>
+    <p>Comments: <%= post.comments.count %></p>
+    <% if user_signed_in? && current_user.id == post.user_id %>
+    <li><%= link_to 'Show', post %></li>
+    <li><%= link_to 'Edit', edit_post_path(post) %></li>
+    <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
   </div>
-</table>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'New Post', new_post_path %>
+  <% end %>
+</div>
+
+<aside class="col-md-6 aside-blog">
+  <h3>Most popular</h3>
+  <ul>
+    <li>Post title 1</li>
+    <li>Post title 2</li>
+    <li>Post title 3</li>
+  </ul>
+</aside>
+
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+

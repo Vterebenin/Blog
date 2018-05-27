@@ -6,5 +6,10 @@ Rails.application.routes.draw do
 		resources :comments
 	end
 	root 'posts#index'
+	get '/contact' => 'static_pages#contact'
+	get '/about' => 'static_pages#about'
+	devise_scope :user do
+		get '/admin' => 'devise/sessions#new'
+	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

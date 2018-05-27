@@ -15,7 +15,17 @@
 		<%= render @post.comments %>
 		<h3> Join Discussion: </h3>
 		<%= render "comments/form" %>
-	</div>
+		<div class="fb-comments" data-href="http://localhost:3000" data-width="470" data-num-posts="2"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=504323752911178";
+  fjs.parentNode.insertBefore(js, fjs);
+
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
