@@ -55,6 +55,8 @@ a
 		transition: width 350ms ease-in-out
 		width: 100%
 
+.date, .comments-count
+	color: #f00
 .active
 	&:after
 		backface-visibility: hidden
@@ -111,7 +113,7 @@ a
 			height: 0
 		&:after
 			content: ''
-			width: 300px
+			width: 280px
 			height: 4px
 			background-color: #000
 			margin-top: 40px
@@ -121,12 +123,23 @@ a
 			margin-top: -40px
 			font-size: 24px
 			line-height: 1.5
+			opacity: 0.8
 // navbar
 .navbar
-	background-color: transparent
+	background: transparent //linear-gradient(to bottom, #333 0%, rgba(255, 255, 255, 0) 70%)
+	border: none
+	border-radius: 0
+	padding-bottom: 30px
+	
+	.navbar-collapse
+		margin-top: 30px
 	.navbar-brand
 		svg
 			width: 120px
 			height: 30px
+			//background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%)
 	.nav-item
 		padding: 5px
+
+
+@import "media.scss"
