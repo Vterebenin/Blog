@@ -1,7 +1,3 @@
-
-
-
-    
 <div class="posts col-md-6">
   <% @posts.each do |post| %>
   <div class="post-wrapper">
@@ -14,7 +10,7 @@
       <div class="background-size-3">
       </div>
     </div>
-    <p><%= truncate(post.body, length:150) %></p>
+    <p class="post-text"><%= truncate(post.body, length:150) %></p>
     <p>Posted <span class="date"><%= time_ago_in_words(post.created_at) %></span> ago</p>
     <p><%= post.updated_at if post.updated_at? %></p>
     <p>Comments: <%= post.comments.count %></p>
@@ -25,21 +21,19 @@
     <% end %>
   </div>
   <% end %>
-  <% if user_signed_in? %>
-    <%= link_to 'New Post', new_post_path %>
-  <% end %>
+ 
 </div>
 
+
+
+
+
 <aside class="col-md-6 aside-blog">
-  <h3>Most popular</h3>
-  <ul>
-    <li>Post title 1</li>
-    <li>Post title 2</li>
-    <li>Post title 3</li>
-  </ul>
+  <h2>Most commented</h2>
+  <% @most_commented.each do |post| %>
+    <h4><%= link_to post.title, post %></h4>
+  <% end %>
 </aside>
 
-
-<br>
 
 

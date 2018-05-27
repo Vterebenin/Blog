@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order("created_at DESC")
+    @most_commented = Post.most_commented
   end
 
   # GET /posts/1
