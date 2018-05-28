@@ -1,5 +1,5 @@
 require_relative 'boot'
-
+require 'kramdown'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -17,5 +17,6 @@ module Ternow
     # the framework and any gems in your application.
     config.assets.enabled = true  
 		config.assets.paths << "#{Rails.root}/app/assets/fonts"  
+    
   end
 end

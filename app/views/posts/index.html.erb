@@ -1,5 +1,5 @@
 <div class="posts col-md-6">
-  <% @posts.each do |post| %>
+  <div class="row">  <% @posts.each do |post| %>
   <div class="post-wrapper">
     <div class="animation-h1">
       <h1 class="ternow-h1"><%= link_to post.title, post %></h1>
@@ -12,36 +12,29 @@
       <div class="background-size-3">
       </div>
     </div>
-    <p class="post-text"><%= truncate(post.body, length:150) %></p>
-    <p>Posted <span class="date"><%= time_ago_in_words(post.created_at) %></span> ago</p>
+    <p class="post-text"><%= sanitize markdown(truncate(post.body, length:150)) %></p>
+    <p class="date-font-size">Posted <span class="date"><%= time_ago_in_words(post.created_at) %></span> ago</p>
     <% if post.updated_at != post.created_at %>
-    <p>Edited <span class="date"><%= post.updated_at  %></span></p>
+    <p class="date-font-size">Edited <span class="date"><%= time_ago_in_words(post.updated_at)  %></span> ago</p>
     <% end %>
-    <p>Comments: <span class="comments-count"><%= post.comments.count %></span></p>
     <% if user_signed_in? && current_user.id == post.user_id %>
-    <li><%= link_to 'Show', post %></li>
+
     <li><%= link_to 'Edit', edit_post_path(post) %></li>
     <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
   </div>
   <% end %>
+
+</div>
+<%= will_paginate @posts, :page_links => false %>
  
 </div>
 
 
+  
 
 
-
-<aside class="col-md-6 aside-blog">
-
-
-  <h2>Most commented</h2>
-  <% @most_commented.each do |post| %>
-    <h4><%= link_to post.title, post %></h4>
-  <% end %>
-
-
-</aside>
+<%= render 'aside' %>
 
 
 

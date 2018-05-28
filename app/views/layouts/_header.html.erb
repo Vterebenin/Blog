@@ -21,11 +21,11 @@
         <%= link_to "New post", new_post_path, class: 'hvr-line' %>
       </li>
       <% end %>
-      <li class="nav-item active">
+      <li class="nav-item <%= "active" if params[:controller] == "posts" %>">
         <%= link_to "Blog", posts_path, class: 'hvr-line' %>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item <%= "active" if params[:controller] == "projects" %>">
         <%= link_to "Portfolio", projects_path, class: 'hvr-line' %>
       </li>
       <li class="nav-item">

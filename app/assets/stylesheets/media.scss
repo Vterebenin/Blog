@@ -30,10 +30,13 @@
 			display: none;
 		}
 	}
-	.background-size, .background-size-2, .background-size-3 {
+	.background-size, .background-size-2, .background-size-3, .background-size-4 {
 		display: none !important;
 	}
-	.navbar > .row {
+	.post-text {
+		margin-top: 0;
+	}
+	.navbar > .container {
 		display: block;
 	}
 }
