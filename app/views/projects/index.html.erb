@@ -1,23 +1,53 @@
-<p id="notice"><%= notice %></p>
 
-<h1>projects</h1>
+<div class="projects-section">
+  <div class="animation-h1">
+    <h1 class="ternow-h1">Projects</h1>
+    <div class="background-size">
+    </div>
+    <div class="background-size-4">
+    </div>
+    <div class="background-size-2">
+    </div>
+    <div class="background-size-3">
+    </div>
+  </div>
 
-<p class="body"><%=  %></p>
-    
-  <div>
-    <% @projects.each do |project| %>
-      <ul>
-        <li><%= project.title %></li>
-        <li><%= project.description %></li>
-        <li><a href=<%= project.github %>>Github</a></li>
-        <li><a href=<%= project.demo %>>Demo</a></li>
-        <li class="project-picture"><%= image_tag(project.project_picture.url) if project.project_picture? %></li>
-        
-      </ul>
+</div>
+</div>
+
+
+<% @projects.each do |project| %>
+<div class="project-wrapper col-md-3 col-sm-6 col-xs-12">
+  <div class="picture-overlay"></div>
+  <div class="project-picture"><%= image_tag(project.project_picture.url) if project.project_picture? %></div>
+  <div class="project-content">
+    <h4><%= project.title %></h4>
+    <p><%= project.description %></p>
+    <div class="demo-button">
+      <a href=<%= project.demo %>>Demo: <i class="fas fa-laptop"></i></a>
+
+    </div>
+    <div class="social">
+      <a href=<%= project.github %>><i class="fab fa-github"></i></a>
+    </div>
+    <% if user_signed_in? && project.user_id == current_user.id %>
+    <li><%= link_to 'Edit', edit_project_path(project) %></li>
+    <li><%= link_to "Delete", project, method: :delete %></li>
     <% end %>
   </div>
-</table>
+  
+  
+</div>
 
-<br>
 
-<%= link_to 'New project', new_project_path %>
+
+
+<% end %>
+<div class="coming-soon col-md-3 col-sm-6 col-xs-12">
+  <p><i class="fas fa-fire"></i>Coming soon...</p>
+  
+</div>
+
+
+
+</div>
