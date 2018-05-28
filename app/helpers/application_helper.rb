@@ -5,11 +5,11 @@ module ApplicationHelper
 
   def main_title
   	if params[:controller] == "posts"
-  		"My words"
+  		"letters"
   	elsif params[:controller] == "projects"
-  		"My addiction"
+  		"addiction"
   	elsif params[:controller] == "static_pages" && params[:action] == "about"
-  		"Myself"
+  		"myself"
   	elsif params[:controller] == "static_page" && params[:action] == "contact"
   		"My connections"
   	else

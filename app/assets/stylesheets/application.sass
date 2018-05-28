@@ -13,18 +13,18 @@
  *= require_tree .
  *= require_self
  */
-$accent: #ef2b2b
+$accent: #f00
 $custom-dark: #000
 $white: #fff
 @import "bootstrap-sprockets"
 @import "bootstrap"
-@import url("hover.css")
+
 body 
 
 	font-family: oswaldmedium, sans-serif
 ::selection
 	color: $white
-	background: #ff0000
+	background: $accent
 a
 	color: $custom-dark
 	&:visited
@@ -41,7 +41,7 @@ a
 
 	&:after
 		backface-visibility: hidden
-		border: 2px solid rgba(#ff0000, 0)
+		border: 2px solid rgba($accent, 0)
 		bottom: 0px
 		content: " "
 		display: block
@@ -51,16 +51,16 @@ a
 		width: 0
 	&:hover:after
 		backface-visibility: hidden
-		border-color: #FF0000
+		border-color: $accent
 		transition: width 350ms ease-in-out
 		width: 100%
 
 .date, .comments-count
-	color: #f00
+	color: $accent
 .active
 	&:after
 		backface-visibility: hidden
-		border-color: #FF0000
+		border-color: $accent
 		transition: width 350ms ease-in-out
 		width: 100% !important
 
@@ -74,10 +74,10 @@ a
 	background-repeat: no-repeat
 	background-size: cover
 	.cover-image-overlay
-		background-color: #000
+		background-color: $custom-dark
 		width: 100%
 		height: 400px
-		opacity: 0.3
+		opacity: 0.4
 		position: absolute
 .header-image-title
 	z-index: 30
@@ -95,7 +95,7 @@ a
 		&::before
 			content: ''
 			position: absolute
-			top: 20px
+			top: 30px
 			margin-left: -20px
 			width: 310px
 			height: 70px	
@@ -115,7 +115,7 @@ a
 			content: ''
 			width: 280px
 			height: 4px
-			background-color: #000
+			background-color: $custom-dark
 			margin-top: 40px
 			border-radius: 3px
 			position: absolute
@@ -149,7 +149,7 @@ a
 		line-height: 1.5
 		opacity: 0.8
 	a, a:visited
-		color: #f00
+		color: $accent
 		opacity: 0.8
 		&:hover
 			text-decoration: underline
@@ -192,7 +192,7 @@ textarea.form-control
 		padding: 20px
 		font-size: 30px
 		a
-			color: #000
+			color: $custom-dark
 .navbar-toggler:not(:disabled):not(.disabled)
 	float: right
 .navbar-toggler-icon
@@ -211,7 +211,7 @@ textarea.form-control
 	padding: 0
 	&:nth-child(2n)
 		.picture-overlay
-			background-color: #000
+			background-color: $custom-dark
 	.picture-overlay
 		position: absolute
 		width: 100%
@@ -273,3 +273,39 @@ textarea.form-control
 		opacity: .8
 		i
 			padding-right: 10px
+.about
+	.avatar-image-wrapper
+		margin-bottom: 40px
+		img
+			margin-right: auto
+			margin-left: auto
+			width: 150px
+			height: 150px
+			border-radius: 100%
+			background-position: center center
+			border: 1px solid $custom-dark
+	p
+		margin-bottom: 40px
+		opacity: 0.8
+		font-size: 22px
+		line-height: 1.5
+		&:last-child
+			margin-bottom: 100px
+	a, a:visited
+		color: $accent
+		&:hover
+			transition: 0.5s ease
+			color: $custom-dark
+			text-decoration: underline
+	.thing-image-wrapper
+		transform: rotate(-180deg)
+		img
+			width: 300px
+			height: 300px
+	.social
+		text-align: left
+		float: left
+		font-size: 18px
+		i
+			font-size: 24px
+			padding-right: 5px
