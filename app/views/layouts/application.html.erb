@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ternow</title>
+		<title>Ternow | <%= main_title %></title>
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -18,7 +18,7 @@
 			<div class="header-image-title">
 				<h1><%= main_title %></h1>
 			</div>
-			<div class="cover-image" style="background-image: url(/assets/<%= main_title %>.jpg)">
+			<div class="cover-image <%= main_title %>" style="">
 				<div class="cover-image-overlay">
 				</div>
 			</div>
