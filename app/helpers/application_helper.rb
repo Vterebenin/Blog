@@ -10,8 +10,6 @@ module ApplicationHelper
   		"addiction"
   	elsif params[:controller] == "static_pages" && params[:action] == "about"
   		"myself"
-  	elsif params[:controller] == "static_page" && params[:action] == "contact"
-  		"My connections"
   	else
   		""
   	end
