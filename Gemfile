@@ -48,6 +48,7 @@ gem 'kramdown'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 group :production do
   gem 'pg'
+  gem 'fog'
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
