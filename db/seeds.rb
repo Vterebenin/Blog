@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # CHANGE IT IN PRODUCTION
-User.create(email: 'admin@mail.ru', password: '123qwe')
+User.create(email: ENV['ADMIN-EMAIL'], password: ENV['ADMIN-PASSWORD'])
