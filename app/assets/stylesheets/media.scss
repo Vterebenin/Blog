@@ -18,11 +18,17 @@
 		display: none;
 	}
 	.navbar .navbar-collapse {
+		width: 100%;
+		margin: 0;
+		padding: 0 35%;
 		order: 3;
 	}
 	.navbar-brand {
 		margin-right: -50px;
 		order: -1;
+	}
+	.col-md-8 {
+		max-width: unset;
 	}
 }
 
@@ -35,11 +41,7 @@
 		display: inline-block;
 		order: 2;
 	}
-	.navbar .navbar-collapse {
-		width: 100%;
-		margin: 0;
-		padding: 0 35%;
-	}
+	
 
 }
 
