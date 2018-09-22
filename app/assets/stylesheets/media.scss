@@ -7,20 +7,40 @@
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width : 991px) {
 	.collapse, .collapsing {
 		.navbar-right {
 			text-align: center;
 			float: none !important;
 		}
 	}
+	.navbar .navbar-toggler {
+		display: none;
+	}
+	.navbar .navbar-collapse {
+		order: 3;
+	}
+	.navbar-brand {
+		margin-right: -50px;
+		order: -1;
+	}
 }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width : 767px) {
 	aside {
 		text-align: center;
 	}
+	.navbar .navbar-toggler {
+		display: inline-block;
+		order: 2;
+	}
+	.navbar .navbar-collapse {
+		width: 100%;
+		margin: 0;
+		padding: 0 35%;
+	}
+
 }
 
 /* Extra Small Devices, Phones */
