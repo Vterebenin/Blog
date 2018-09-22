@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'rss/index'
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   resources :projects
   resources :posts do
 		resources :comments
 	end
+	get 'feeds', to: "rss#index", format: 'rss'
 	root 'posts#index'
 	get '/contact' => 'static_pages#contact'
 	get '/about' => 'static_pages#about'

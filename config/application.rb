@@ -17,6 +17,6 @@ module Ternow
     # the framework and any gems in your application.
     config.assets.enabled = true  
 		config.assets.paths << "#{Rails.root}/app/assets/fonts"  
-    
+    config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
   end
 end
