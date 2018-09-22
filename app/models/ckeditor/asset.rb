@@ -1,7 +1,7 @@
-class Ckeditor::Asset
-  include Ckeditor::Orm::Mongoid::AssetBase
+class Ckeditor::Asset < ActiveRecord::Base
+  include Ckeditor::Orm::ActiveRecord::AssetBase
+  include Ckeditor::Backend::Dragonfly
 
-  delegate :url, :current_path, :content_type, to: :data
-
+  dragonfly_accessor :data, app: :ckeditor
   validates :data, presence: true
 end

@@ -12,7 +12,13 @@
       <div class="background-size-3">
       </div>
     </div>
-    <p class="post-text"><%= sanitize markdown(truncate(post.body, length:150)) %></p>
+    <p class="post-text">
+      <% if post.anouncement.nil? %>
+        <%= sanitize markdown(truncate(post.body, length:150))  %>
+      <% else %>
+        <%= sanitize markdown(truncate(post.anouncement, length:150)) %>
+      <% end %>
+      </p>
     <p class="date-font-size">Posted <span class="date"><%= time_ago_in_words(post.created_at) %></span> ago</p>
     <% if post.updated_at != post.created_at %>
     <p class="date-font-size">Edited <span class="date"><%= time_ago_in_words(post.updated_at)  %></span> ago</p>

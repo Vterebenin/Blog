@@ -12,26 +12,23 @@
   <% end %>
 
   <div class="field">
-
     <%= form.input :title, input_html: { class: 'form-control' } %>
   </div>
-
- 
-
+  
   <div class="field">
-
+    <%= form.input :anouncement, input_html: { class: 'form-control' } %>
+  </div>
+ 
+  <div class="field">
     <%= form.input :top_picture, input_html: { class: 'form-control' }  %>
   </div>
 
 
   <div class="field">
-
       <%= form.cktext_area :body, input_html: { class: 'form-control' } %> 
-    </textarea>
   </div>
 
   <div class="actions">
     <%= form.button :submit, class: 'btn btn-info' %>
   </div>
 <% end %>
-
