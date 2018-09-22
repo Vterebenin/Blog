@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
-    @most_commented = Post.most_commented.take(5)
   end
 
   # GET /posts/1

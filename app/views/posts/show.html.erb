@@ -11,8 +11,12 @@
     </div>
   </div>
   <p class="post-text">
-    <%= sanitize markdown(@post.body) %>
+    <%= (@post.body).html_safe %>
   </p>
+  <div class="show__time-links">
+    <p>Posted at: <%= @post.created_at %> <br> </p>
+    <p>Edited at: <%= @post.updated_at %></p>
+  </div>
   <div class="show-links">
     <% if user_signed_in? %>
     <%= link_to 'Edit', edit_post_path(@post) %> |
@@ -41,5 +45,5 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
+                     
 </div>
